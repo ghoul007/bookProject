@@ -17,9 +17,11 @@ import { Routes, RouterModule } from "@angular/router";
 const routes: Routes = [
   { path: "auth/signup", component: SignupComponent },
   { path: "auth/signin", component: SigninComponent },
-  { path: "book", component: BookListsComponent },
-  { path: "book/new", component: BookFormComponent },
-  { path: "book/view/:id", component: SingleBookComponent }
+  { path: "book", component: BookListsComponent, canActivate: [AuthGuardService] },
+  { path: "book/new", component: BookFormComponent, canActivate: [AuthGuardService] },
+  { path: "book/view/:id", component: SingleBookComponent, canActivate: [AuthGuardService] },
+  { path: "", redirectTo: 'book', pathMatch: 'full' },
+  { path: "**", redirectTo: 'book' }
 ]
 
 @NgModule({
