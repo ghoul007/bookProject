@@ -8,12 +8,7 @@ import * as firebase from "firebase";
 export class AppComponent {
   constructor() {
     var config = {
-      apiKey: "AIzaSyDDuTW5fjg4wzxzcaoKeaw2idfkolzOmtc",
-      authDomain: "books-8a8e5.firebaseapp.com",
-      databaseURL: "https://books-8a8e5.firebaseio.com",
-      projectId: "books-8a8e5",
-      storageBucket: "",
-      messagingSenderId: "1050603276987"
+      //config firbase
     };
     firebase.initializeApp(config);
   }
